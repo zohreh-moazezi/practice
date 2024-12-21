@@ -14,13 +14,22 @@
     "moduleDetection": "force",
     "noEmit": true,
     "jsx": "react-jsx",
+    "types": ["node"],
 
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@features/*": ["features/*"],
+      "@layout/*": ["layout/*"],
+      "@assets/*": ["assets/*"],
+      "@theme/*": ["theme/*"],
+      "@utils/*": ["utils/*"]
+    }
   },
   "include": ["src"]
 }
