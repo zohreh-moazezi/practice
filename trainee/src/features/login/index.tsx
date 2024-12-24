@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { authLoginPost } from '@features/auth/api/authService';
 import { useMutation } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
-import Form from './Form/index';
+import Form from './components/Form/index';
 
 const Login = () => {
   const [error, setError] = useState<{
@@ -24,7 +24,7 @@ const Login = () => {
   });
   return (
     <div>
-      <Form />
+      <Form error={error} setError={setError} login={login} />
     </div>
   );
 };
