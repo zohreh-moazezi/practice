@@ -1,6 +1,8 @@
 import { z } from 'zod';
 
-const user = z.object({
+export type FormInputs=z.infer<typeof loginSchema>
+
+export const loginSchema = z.object({
   username: z
     .string()
     .min(5, { message: 'Too Short' })

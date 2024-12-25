@@ -8,7 +8,7 @@ const Login = () => {
   const [error, setError] = useState<{
     validation?: Record<string, string>;
     authentication?: string;
-  }>({});
+  }>({validation:{}, authentication:""});
   const navigate = useNavigate();
   const { mutate: login } = useMutation({
     mutationFn: authLoginPost,
@@ -24,7 +24,7 @@ const Login = () => {
   });
   return (
     <div>
-      <Form error={error} setError={setError} login={login} />
+      <Form error={error} login={login} />
     </div>
   );
 };
