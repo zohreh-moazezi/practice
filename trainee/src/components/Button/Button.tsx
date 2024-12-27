@@ -9,7 +9,7 @@ const Button: React.FC<buttonProps> = ({ children, ...props }) => {
   const classes = useStyles();
   return (
     <button className={classes.button} {...props}>
-      {children}{' '}
+      {children}
     </button>
   );
 };

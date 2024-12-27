@@ -4,6 +4,7 @@ import { loginSchema, FormInputs } from './services/schema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import Input from 'components/Input/Input';
 import Button from 'components/Button/Button';
+import { useStyles } from './styled';
 
 interface FormProp{
   error: { validation?: Record<string, string>; authentication?: string };
@@ -18,9 +19,10 @@ const Form: React.FC<FormProp> = ({ login, error }) => {
   const onSubmit = async (values: { username: string; password: string }) => {
     login(values);
   };
+  const classes=useStyles();
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
       <Input
         type="text"
         placeholder=""

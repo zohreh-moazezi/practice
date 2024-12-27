@@ -1,7 +1,12 @@
-import React, { InputHTMLAttributes } from 'react';
+import React from 'react';
 import { useStyles } from './styled';
+import Label from 'components/Label/Label';
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+interface InputProps
+  extends React.DetailedHTMLProps<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement
+  > {
   error?: string;
   hasError?: boolean;
 }
@@ -12,7 +17,19 @@ const Input: React.FC<InputProps> = ({
   ...props
 }) => {
   const classes = useStyles({ error, hasError });
-  return <input className={classes.input} {...props} />;
+  return (
+    
+      <div className={classes.container}>
+        <input
+          className={classes.input}
+          {...props}
+        />
+        {error && <div className="helperText">{error}</div>}
+
+        <Label hasError={hasError}>{props.name}</Label>
+      </div>
+    
+  );
 };
 
 export default Input;

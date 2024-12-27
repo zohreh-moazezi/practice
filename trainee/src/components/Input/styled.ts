@@ -9,6 +9,17 @@ const sharedStyle = {
 };
 
 export const useStyles = createUseStyles({
+  container:{
+    position: "relative",
+   padding: "1rem 0 0 0"
+  },
+  helperText:{
+    color: theme.colors.errorText,
+    fontFamily:theme.fonts.main,
+    fontSize:"0.76rem"
+  },
+  
+
   input: ({ error, hasError }: { error: string; hasError: boolean }) => ({
     width: '100%',
     padding: '1.15rem',
@@ -28,4 +39,8 @@ export const useStyles = createUseStyles({
       boxShadow: 'none',
     },
   }),
+  
+  
+
 });
+

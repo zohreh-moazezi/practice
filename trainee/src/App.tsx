@@ -3,15 +3,20 @@ import { theme } from './theme/theme';
 import { useStyles } from './theme/Global';
 import { ThemeProvider } from 'react-jss';
 import { RouterProvider } from 'react-router-dom';
+import { QueryClientProvider,QueryClient } from '@tanstack/react-query';
 import Router from 'routes/router';
 
+const queryClient=new QueryClient();
 const App = () => {
   useStyles();
 
   return (
     <ThemeProvider theme={theme}>
-      <RouterProvider router={Router}/>
-        <div></div>
+      <QueryClientProvider client={queryClient}>
+         <RouterProvider router={Router}/>
+      </QueryClientProvider>
+     
+        
     </ThemeProvider>
   );
 };
