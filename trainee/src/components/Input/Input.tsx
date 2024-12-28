@@ -18,17 +18,12 @@ const Input: React.FC<InputProps> = ({
 }) => {
   const classes = useStyles({ error, hasError });
   return (
-    
-      <div className={classes.container}>
-        <input
-          className={classes.input}
-          {...props}
-        />
-        {error && <div className="helperText">{error}</div>}
+    <div className={classes.container}>
+      <input className={classes.input} {...props} />
+      {error && <div className="helperText">{error}</div>}
 
-        <Label hasError={hasError}>{props.name}</Label>
-      </div>
-    
+      <Label hasError={hasError}>{props.name}</Label>
+    </div>
   );
 };
 

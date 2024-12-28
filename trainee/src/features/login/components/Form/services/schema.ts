@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export type FormInputs=z.infer<typeof loginSchema>
+export type FormInputs = z.infer<typeof loginSchema>;
 
 export const loginSchema = z.object({
   username: z

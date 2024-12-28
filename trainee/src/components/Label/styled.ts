@@ -2,7 +2,7 @@ import { theme } from '@theme/theme';
 import { createUseStyles } from 'react-jss';
 
 export const useStyles = createUseStyles({
-  label: ({ hasError }: { hasError: boolean|undefined }) => ({
+  label: ({ hasError }: { hasError: boolean | undefined }) => ({
     color: hasError ? theme.colors.error : theme.colors.textSecondary,
     lineHeight: '1.5rem',
     position: 'absolute',

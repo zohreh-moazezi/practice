@@ -7,8 +7,13 @@ interface LabelProps extends LabelHTMLAttributes<HTMLLabelElement> {
 }
 
 const Label: React.FC<LabelProps> = ({ hasError, children, ...props }) => {
-  const classes= useStyles({hasError})
-  return <label className={classes.label} {...props} > {children}</label>;
+  const classes = useStyles({ hasError });
+  return (
+    <label className={`${classes.label} label`} {...props}>
+      {' '}
+      {children}
+    </label>
+  );
 };
 
 export default Label;
